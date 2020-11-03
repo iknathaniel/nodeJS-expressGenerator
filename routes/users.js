@@ -6,7 +6,8 @@ const authenticate = require('../authenticate');
 const router = express.Router();
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+// Week-3: Task-3 (admin authentication)
+router.get('/', authenticate.verifyAdmin, function(req, res, next) {
     res.send('respond with a resource');
 });
 
